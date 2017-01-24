@@ -1,9 +1,9 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.",
-    "version" : "1.0",
-    "title" : "Swagger Petstore",
+    "description" : "Deployment options  Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.",
+    "version" : "1.0.0",
+    "title" : "Swagger ",
     "termsOfService" : "http://swagger.io/terms/",
     "contact" : {
       "email" : "apiteam@swagger.io"
@@ -38,7 +38,7 @@
     "/pet" : {
       "post" : {
         "tags" : [ "pet" ],
-        "summary" : "Add a new pet",
+        "summary" : "Add a new pet to the store",
         "description" : "",
         "operationId" : "addPet",
         "consumes" : [ "application/json", "application/xml" ],
@@ -686,6 +686,9 @@
           "type" : "boolean",
           "default" : false
         }
+      },
+      "xml" : {
+        "name" : "Order"
       }
     },
     "Category" : {
@@ -698,6 +701,9 @@
         "name" : {
           "type" : "string"
         }
+      },
+      "xml" : {
+        "name" : "Category"
       }
     },
     "User" : {
@@ -730,6 +736,9 @@
           "format" : "int32",
           "description" : "User Status"
         }
+      },
+      "xml" : {
+        "name" : "User"
       }
     },
     "Tag" : {
@@ -742,6 +751,9 @@
         "name" : {
           "type" : "string"
         }
+      },
+      "xml" : {
+        "name" : "Tag"
       }
     },
     "Pet" : {
@@ -756,16 +768,25 @@
           "$ref" : "#/definitions/Category"
         },
         "name" : {
-          "type" : "string"
+          "type" : "string",
+          "example" : "doggie"
         },
         "photoUrls" : {
           "type" : "array",
+          "xml" : {
+            "name" : "photoUrl",
+            "wrapped" : true
+          },
           "items" : {
             "type" : "string"
           }
         },
         "tags" : {
           "type" : "array",
+          "xml" : {
+            "name" : "tag",
+            "wrapped" : true
+          },
           "items" : {
             "$ref" : "#/definitions/Tag"
           }
@@ -775,6 +796,9 @@
           "description" : "pet status in the store",
           "enum" : [ "available", "pending", "sold" ]
         }
+      },
+      "xml" : {
+        "name" : "Pet"
       }
     },
     "ApiResponse" : {
@@ -797,5 +821,5 @@
     "description" : "Find out more about Swagger",
     "url" : "http://swagger.io"
   },
-  "x-aws-api-id" : "01q3x450si"
+  "x-aws-api-id" : "3pvun0r2m6"
 }
