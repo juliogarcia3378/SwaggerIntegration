@@ -13,6 +13,8 @@
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/juliogarcia3378/SwaggerHub/1.0.0",
   "tags" : [ {
     "name" : "pet",
     "description" : "Everything about your Pets",
@@ -31,6 +33,7 @@
       "url" : "http://swagger.io"
     }
   } ],
+  "schemes" : [ "https", "http" ],
   "paths" : {
     "/pet" : {
       "post" : {
@@ -683,9 +686,6 @@
           "type" : "boolean",
           "default" : false
         }
-      },
-      "xml" : {
-        "name" : "Order"
       }
     },
     "Category" : {
@@ -698,9 +698,6 @@
         "name" : {
           "type" : "string"
         }
-      },
-      "xml" : {
-        "name" : "Category"
       }
     },
     "User" : {
@@ -733,9 +730,6 @@
           "format" : "int32",
           "description" : "User Status"
         }
-      },
-      "xml" : {
-        "name" : "User"
       }
     },
     "Tag" : {
@@ -748,9 +742,6 @@
         "name" : {
           "type" : "string"
         }
-      },
-      "xml" : {
-        "name" : "Tag"
       }
     },
     "Pet" : {
@@ -765,25 +756,16 @@
           "$ref" : "#/definitions/Category"
         },
         "name" : {
-          "type" : "string",
-          "example" : "doggie"
+          "type" : "string"
         },
         "photoUrls" : {
           "type" : "array",
-          "xml" : {
-            "name" : "photoUrl",
-            "wrapped" : true
-          },
           "items" : {
             "type" : "string"
           }
         },
         "tags" : {
           "type" : "array",
-          "xml" : {
-            "name" : "tag",
-            "wrapped" : true
-          },
           "items" : {
             "$ref" : "#/definitions/Tag"
           }
@@ -793,9 +775,6 @@
           "description" : "pet status in the store",
           "enum" : [ "available", "pending", "sold" ]
         }
-      },
-      "xml" : {
-        "name" : "Pet"
       }
     },
     "ApiResponse" : {
@@ -818,7 +797,5 @@
     "description" : "Find out more about Swagger",
     "url" : "http://swagger.io"
   },
-  "host" : "virtserver.swaggerhub.com",
-  "basePath" : "/juliogarcia3378/SwaggerHub/1.0.0",
-  "schemes" : [ "https", "http" ]
+  "x-aws-api-id" : "01q3x450si"
 }
